@@ -1,0 +1,56 @@
+<table>
+  <div class="cardHeader">
+    <h2>Recent Orders</h2>
+
+  <input
+      type="text"
+      name="valeur"
+      class="btn"
+      [(ngModel)]="valeur"
+      (input)="onValeurChange()"
+    /> 
+  </div>
+
+  <table>
+    <thead>
+      <tr>
+        <td>image</td>
+        <td>nom</td>
+        <td>prix</td>
+        <td>categorie</td>
+        <td>disponible</td>
+        <td>action</td>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr *ngFor="let produit of produits">
+        <td>{{ produit.url_image }}</td>
+        <td>{{ produit.nom }}</td>
+        <td>{{ produit.prix }}</td>
+        <td>{{ produit.categorie }}</td>
+
+        <td>
+          <input
+            class="form-check-input"
+            type="radio"
+            [name]="produit.id_prod"
+            [value]="produit.id_prod"
+            [checked]="produit.dispo == 1"
+            (click)="disponible(produit)"
+          />
+        </td>
+        <td>
+          <div>
+            <span class="status delivered" (click)="update(produit)"
+              >update</span
+            >
+            <span class="status delivered" (click)="delete(produit.id_prod)"
+              >delete</span
+            >
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</table>

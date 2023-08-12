@@ -1,0 +1,35 @@
+<div class="cardHeader">
+  <h2>Recent Orders</h2>
+  <input type="date" name="" class="btn" [(ngModel)]="datedebut"  name="datedebut" (input)="envoyer()" />
+  <input type="date" name="" class="btn" [(ngModel)]="datefin"  name="datefin" (input)="envoyer()"  />
+</div>
+
+<table>
+  <thead>
+    <tr>
+      <th>identifcation</th>
+      <th>panie</th>
+      <th>prix</th>
+      <th>nom_livreur</th>
+      <th>ation</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr  *ngFor="let panie of dashbors">
+            <td>{{panie.nom_client}}/{{panie.numero_client}}</td>
+            <td><ul>
+                <li *ngFor="let cmd of panie.panie">
+                {{cmd[0]}}
+                </li>
+                </ul>
+             </td>
+           <td>{{panie.rbah_resteau}}</td>
+            <td>{{panie.nom_livreur}}</td>
+          
+
+            <td><div>  <span class="status delivered" >update</span>
+                <span class="status delivered" >delete</span> </div></td>
+        </tr>
+  </tbody>
+</table>

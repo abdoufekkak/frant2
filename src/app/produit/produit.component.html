@@ -1,0 +1,9 @@
+<div class="details">
+  <app-tableauproduit class="recentOrders" [produits]="produits"     (valueEmitted)="getValueFromtable($event)"
+  ></app-tableauproduit>
+
+  <app-add-or-mod-produit class="recentOrders"     (valueEmitted)="getValueFromChild($event)"
+  ></app-add-or-mod-produit>
+</div>
+
+

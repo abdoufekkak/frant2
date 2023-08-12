@@ -1,0 +1,26 @@
+<div class="cardHeader">
+  <h2>Recent Orders</h2>
+</div>
+<form class="form" (ngSubmit)="onSubmit()" #myForm="ngForm">
+  <h2>CONTACT US</h2>
+  <p>nom:</p>
+  <input type="text" placeholder="nom" [(ngModel)]="produit.nom" name="nom" />
+  <p>prix:</p>
+  <input
+    type="text"
+    placeholder="prix"
+    [(ngModel)]="produit.prix"
+    name="prix"
+  />
+
+  <p>categorie:</p>
+  <select [(ngModel)]="produit.categorie" name="categorie">
+    <option value="tacos">tacos</option>
+    <option value="pizza">pizza</option>
+  </select>
+  <p>categorie:</p>
+
+  <p>url_image:</p>
+  <input type="file" id="file" name="" />
+  <input type="submit" [value]="button_" />
+</form>
